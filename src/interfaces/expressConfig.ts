@@ -1,4 +1,5 @@
-export interface ExpressConfig {
+export interface expressConfig {
     port: Number,
     mode: String
 }
+

@@ -1,15 +1,17 @@
+<<<<<<< Updated upstream
 import { ExpressConfig } from "../interfaces/expressConfig"
+=======
+import { expressConfig } from "../interfaces/expressConfig"
+>>>>>>> Stashed changes
 import routes from "../routes"
 
 import express from "express";
 import consola from "consola";
 import path from "path";
 
-
 class ExpressClient{
-    public constructor(ExpressConfig: ExpressConfig){
+    public constructor(ExpressConfig: expressConfig){
         const app = express()
-        
         /**
          * Express settings
          */
@@ -22,7 +24,7 @@ class ExpressClient{
         app.use(express.json());
         app.use(express.raw());
 
-        app.listen(ExpressConfig.port, (() => consola.success("App listening on port", ExpressConfig.port)))
+        app.listen(ExpressConfig.port, (() => consola.success("App listening on port", ExpressConfig.port, "in", ExpressConfig.mode, "mode.")))
     }
 }
 
