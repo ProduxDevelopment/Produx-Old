@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-import { ExpressConfig } from "../interfaces/expressConfig"
-=======
 import { expressConfig } from "../interfaces/expressConfig"
->>>>>>> Stashed changes
 import routes from "../routes"
 
 import express from "express";
