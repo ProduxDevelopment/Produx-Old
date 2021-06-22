@@ -1,9 +1,9 @@
 import { PaypalClient } from "../interfaces/paypalOptions";
 
 class PayPalClient implements PaypalClient {
-    id: string;
-    secret: string;
-    live: boolean;
+    public id: string = null;
+    public secret: string = null;
+    public live: boolean = null;
 
     constructor(id: string, secret: string, live: boolean) {
         this.id = id;

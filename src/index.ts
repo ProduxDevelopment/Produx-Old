@@ -10,4 +10,3 @@ import { PayPalClient } from "./Client/PaypalClient";
 // testing
 
 const paypal = new PayPalClient("", "", true);
-
