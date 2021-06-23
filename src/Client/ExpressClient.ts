@@ -6,6 +6,9 @@ import consola from "consola";
 import path from "path";
 
 class ExpressClient{
+    /**
+     * Tells express.js to start listening on defined port(s).
+     */
     public constructor(ExpressConfig: expressConfig){
         const app = express()
         /**
@@ -22,6 +25,7 @@ class ExpressClient{
 
         app.listen(ExpressConfig.port, (() => consola.success("App listening on port", ExpressConfig.port, "in", ExpressConfig.mode, "mode.")))
     }
+
 }
 
 export { ExpressClient }
