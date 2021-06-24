@@ -11,3 +11,4 @@ const express = new ExpressClient(configExpress as expressConfig)
 const database = new DatabaseClient(configDatabase as databaseConfig)
 
 export { database, express}
+
