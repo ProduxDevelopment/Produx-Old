@@ -9,4 +9,8 @@ import { PayPalClient } from "./Client/PaypalClient";
 
 // testing
 
-const paypal = new PayPalClient("", "", true);
+const paypal = new PayPalClient({
+    id: "your_client_id",
+    secret: "your_client_secret",
+    live: true
+});
