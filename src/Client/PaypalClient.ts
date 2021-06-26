@@ -1,18 +1,23 @@
-import { PaypalClient } from "../interfaces/paypalOptions";
+import { PaypalClientOptions } from "../interfaces/paypalOptions";
+import fetch from "node-fetch";
 
-class PayPalClient implements PaypalClient {
-    public id: string = null;
-    public secret: string = null;
-    public live: boolean = null;
+class PayPalClient {
+    public clientOptions: PaypalClientOptions = null;
 
-    constructor(id: string, secret: string, live: boolean) {
-        this.id = id;
-        this.secret = secret;
-        this.live = live;
+    constructor(options: PaypalClientOptions) {
+        this.clientOptions = options;
     }
 
-    public createOrder() {
-        
+    public createOrder(json: JSON) {
+        let link: string = (this.clientOptions.live ? "https://api-m.paypal.com/" : "https://api-m.sandbox.paypal.com/")
+        fetch(link, {
+            method: "POST",
+            headers: {
+                'Content-Type': "application/json",
+                'Authorization': ""
+            },
+            body: JSON.stringify(json)
+        })
     }
 }
 
