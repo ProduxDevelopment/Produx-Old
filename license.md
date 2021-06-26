@@ -1,0 +1,1 @@
+Commercial Use License | Vendor
