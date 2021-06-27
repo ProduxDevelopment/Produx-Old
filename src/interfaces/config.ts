@@ -1,14 +1,14 @@
 export interface config {
     server: {
-        port: Number,
-        mode: String
+        port?: Number,
+        mode?: String,
     },
     database: {
-        uri: String
+        uri?: String
     },
     paypal: {
-        id: string;
-        secret: string;
-        live: boolean;
+        id?: string;
+        secret?: string;
+        live?: boolean;
     }
 }
