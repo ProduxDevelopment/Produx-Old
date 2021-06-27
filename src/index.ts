@@ -1,9 +1,9 @@
 import Config from "../Config/config.json";
 import { config } from "./interfaces/config";
 
-import { ExpressClient } from "./client/ExpressClient"
-import { DatabaseClient } from "./client/DatabaseClient"
-import { PayPalClient } from "./client/PaypalClient";
+import { ExpressClient } from "./Client/ExpressClient"
+import { DatabaseClient } from "./Client/DatabaseClient"
+import { PayPalClient } from "./Client/PaypalClient";
 
 const express = new ExpressClient(Config as unknown as config)
 const database = new DatabaseClient(Config as unknown as config)
@@ -26,5 +26,3 @@ setTimeout(function(){
     ]
   })
 }, 5000)
-
-
