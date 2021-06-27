@@ -1,19 +1,19 @@
-import { databaseConfig } from "../interfaces/databaseConfig";
+import { config } from "../interfaces/config";
 
 import mongoose from "mongoose";
 import consola from "consola";
 
 class DatabaseClient{
     /**
-* Intializes the database connection between the application and MongoDB.
-     */
-    public constructor(databaseConfig: databaseConfig){
-        if(!databaseConfig.mongoURL){
+    * Intializes the database connection between the application and MongoDB.
+    */
+    public constructor(config: config){
+        if(!config.database.uri){
             consola.error("No `uri` specified.")
             process.exit(7)
         }
 
-        mongoose.connect(databaseConfig.mongoURL as string, {
+        mongoose.connect(config.database.uri as string, {
             useFindAndModify: true,
             useUnifiedTopology: true,
             useNewUrlParser: true,

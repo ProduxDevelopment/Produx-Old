@@ -1,0 +1,14 @@
+{   
+    "server": {
+        "port": 80,
+        "mode": "dev"
+    },
+    "database": {
+        "uri": "mongodb+srv://admin:admin@xshop.2u8rh.mongodb.net/vendordev?retryWrites=true&w=majority"
+    },
+    "paypal": {
+        "id": "AWPtt3U0JEycl1uA_3E6N7_1uDwFSsXPce-GcyUjG6p_g-g_nDnTd637Y6bYxsw7YV0nZjN6O7PE3XKR",
+        "secret": "ENiRTtQMeG0RWASyEeZ3O3WT7xwGNwzr5R-PiW0GU0DNpUD71d42ndQin2tNqraAF6GGUAvMJAwIQWJa",
+        "live": false
+    }
+}

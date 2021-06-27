@@ -1,4 +1,4 @@
-import { expressConfig } from "../interfaces/expressConfig"
+import { config } from "../interfaces/config"
 import routes from "../routes"
 
 import express from "express";
@@ -9,11 +9,9 @@ class ExpressClient{
     /**
      * Tells express.js to start listening on defined port(s).
      */
-    public constructor(ExpressConfig: expressConfig){
+    public constructor(config: config){
         const app = express()
-        /**
-         * Express settings
-         */
+        
         app.set('views', path.join(__dirname, '../views'));
         app.set('view engine', 'ejs');
         
@@ -23,7 +21,7 @@ class ExpressClient{
         app.use(express.json());
         app.use(express.raw());
 
-        app.listen(ExpressConfig.port, (() => consola.success("App listening on port", ExpressConfig.port, "in", ExpressConfig.mode, "mode.")))
+        app.listen(config.server.port, (() => consola.success("App listening on port", config.server.port, "in", config.server.mode, "mode.")))
     }
 
 }

@@ -1,22 +1,30 @@
-// Express Client //
+import Config from "../Config/config.json";
+import { config } from "./interfaces/config";
+
 import { ExpressClient } from "./client/ExpressClient"
-import { expressConfig } from "./interfaces/expressConfig"
-import * as configExpress from "../Config/ExpressConfig.json"
-
 import { DatabaseClient } from "./client/DatabaseClient"
-import { databaseConfig } from "./interfaces/databaseConfig"
-import * as configDatabase from "../Config/databaseConfig.json"
+import { PayPalClient } from "./client/PaypalClient";
 
-const express = new ExpressClient(configExpress as expressConfig)
-const database = new DatabaseClient(configDatabase as databaseConfig)
+const express = new ExpressClient(Config as unknown as config)
+const database = new DatabaseClient(Config as unknown as config)
+const paypal = new PayPalClient(Config as unknown as config)
+
 
 export { database, express}
 
 
-/**
-const paypal = new PayPalClient({
-    id: "your_client_id",
-    secret: "your_client_secret",
-    live: true
-});
-*/
+setTimeout(function(){
+  paypal.createOrder({
+    "intent": "CAPTURE",
+    "purchase_units": [
+      {
+        "amount": {
+          "currency_code": "USD",
+          "value": "100.00"
+        }
+      }
+    ]
+  })
+}, 5000)
+
+

@@ -5,5 +5,10 @@ export interface config {
     },
     database: {
         uri: String
+    },
+    paypal: {
+        id: string;
+        secret: string;
+        live: boolean;
     }
 }
