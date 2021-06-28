@@ -7,8 +7,8 @@ router.get("/", async (req, res) => {
     let link = await paypal.createOrder({
         "intent": "CAPTURE",
         "application_context": {
-            "return_url": "https://localhost/return",
-            "cancel_url": "https://localhost/return",
+            "return_url": "http://localhost/return",
+            "cancel_url": "http://localhost/return",
             "brand_name": "EXAMPLE INC",
             "locale": "en-US",
             "landing_page": "BILLING",
@@ -48,6 +48,7 @@ router.get("/", async (req, res) => {
     })
 
     res.redirect(link.links[1].href)
+    console.log(link)
 })
 
 import returnPay from "./return";

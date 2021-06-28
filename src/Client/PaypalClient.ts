@@ -44,7 +44,7 @@ class PayPalClient {
      * @param json JSON to create payment.
      */
     public async createOrder(json: any) {
-        this.regenToken()
+        await this.regenToken()
         if (this.init == false) return consola.warn("PayPal Client has not initilized yet, so I'm unable to run any functions.")
         const link: string = (this.clientOptions.paypal.live ? "https://api-m.paypal.com/v2/checkout/orders" : "https://api-m.sandbox.paypal.com/v2/checkout/orders")
 
@@ -56,7 +56,7 @@ class PayPalClient {
                 },
                 body: JSON.stringify(json),
             })
-            .then(res => res.json())
+            .then(res => res.json()) 
             .then(json => {
                 return json
             });
@@ -67,7 +67,7 @@ class PayPalClient {
      * @param orderId OrderID - type string.
      */
     public async orderGet(orderId: string){
-        this.regenToken()
+        await this.regenToken()
         if (this.init == false) return consola.warn("PayPal Client has not initilized yet, so I'm unable to run any functions.")
         const link: string = (this.clientOptions.paypal.live ? `https://api-m.sandbox.paypal.com/v2/checkout/orders/${orderId}` : `https://api-m.sandbox.paypal.comcom/v2/checkout/orders/${orderId}`)
 
@@ -83,14 +83,14 @@ class PayPalClient {
         .then(json => {
             return json
         })
-    }
+    } 
 
     /**
      * @public Captures order, and makes it process.
      * @param orderId OrderID - type string.
      */
     public async orderCapture(orderId: any){
-        this.regenToken()
+        await this.regenToken()
         if (this.init == false) return consola.warn("PayPal Client has not initilized yet, so I'm unable to run any functions.")
         const link: string = (this.clientOptions.paypal.live ? `https://api-m.sandbox.paypal.com/v2/checkout/orders/${orderId}/capture` : `https://api-m.sandbox.paypal.com/v2/checkout/orders/${orderId}/capture`)
 
