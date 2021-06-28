@@ -56,7 +56,7 @@ class PayPalClient {
                 },
                 body: JSON.stringify(json),
             })
-            .then(res => res.json()) 
+            .then(res => res.json())
             .then(json => {
                 return json
             });
@@ -83,7 +83,7 @@ class PayPalClient {
         .then(json => {
             return json
         })
-    } 
+    }
 
     /**
      * @public Captures order, and makes it process.
