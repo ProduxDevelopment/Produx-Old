@@ -1,8 +1,10 @@
 import { Router } from "express";
 const router = Router()
 
-import login from "./login/index"
-router.use("/login", login)
+router.use("/", (req, res) => {
+    res.sendFile("login")
+})
+
 
 export default router;
 
