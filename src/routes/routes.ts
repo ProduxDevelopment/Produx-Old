@@ -1,16 +1,20 @@
 
 import { Router } from "express";
 import { config } from "../interfaces/config"
-import { flash } from "express-flash-message";
+import { meta } from "../interfaces/meta"
+const flash = require("express-flash")
 
-import File from "../../Config/config.json"
 import express from "express";
 import session from 'express-session'
 import MongoStore from 'connect-mongo'
 
-import passport from "../passport/setup"
+import passport from "../passport/localStratergy"
 
-const config = File as config
+import ConfigFile from "../../Config/config.json"
+const config = ConfigFile as config
+import MetaFile from "../../Config/meta.json"
+const meta = MetaFile as meta
+
 const router = Router()
 
 router.use(express.json())
@@ -27,25 +31,31 @@ router.use(session({
 }))
 router.use(passport.initialize())
 router.use(passport.session())
-router.use(flash())
+router.use(flash());
 
 import login from "./login/index"
 router.use("/", login)
 
-router.get("/hello", (req, res) => {
+router.get("/", (req, res) => {
+    res.render("index", {
+        title: "Homepage",
+        description: MetaFile.pageDescription,
+        author: MetaFile.author,
+        keywords: MetaFile.keywords
+    })
+})
+
+router.get("/panel", (req, res) => {
     if (req.isAuthenticated()) {
         //@ts-ignore
         const { email, password, name } = req.user
-        res.send("pog" + name)
+        res.send("Panel")
     } else {
+        //req.flash("error", "You are not authenticated!")
         res.redirect("/login")
     }
 })
 
-router.get("/logout", (req, res) => {
-    res.clearCookie("connect.sid")
-    res.redirect("/login")
-})
 
 
 export default router

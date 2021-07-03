@@ -20,7 +20,8 @@ router.post("/", (req, res, next) => {
                     errors: err
                 })
             }
-            return res.redirect("/hello")
+            //req.flash("logged", "Sucessfully Logged in!")
+            return res.redirect("/panel")
         })
     })(req, res, next)
 })

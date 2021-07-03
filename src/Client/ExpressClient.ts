@@ -1,5 +1,5 @@
 import { config } from "../interfaces/config"
-import routes from "../routes"
+import routes from "../routes/routes"
 
 import express from "express";
 import consola from "consola";

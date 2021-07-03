@@ -1,6 +1,4 @@
 build
 node_modules
 config.json
-expressConfig.json
-databaseConfig.json
-config.json
+meta.json
