@@ -3,6 +3,7 @@ import routes from "../routes"
 
 import express from "express";
 import consola from "consola";
+import cookieParser from "cookie-parser";
 import path from "path";
 
 class ExpressClient{
@@ -16,10 +17,7 @@ class ExpressClient{
         app.set('view engine', 'ejs');
         
         app.use('/', routes);
-        
-        app.use(express.urlencoded({ extended: true }));
-        app.use(express.json());
-        app.use(express.raw());
+
 
         app.listen(config.server.port, (() => consola.success("App listening on port", config.server.port, "in", config.server.mode, "mode.")))
     }

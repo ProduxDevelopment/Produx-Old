@@ -2,6 +2,7 @@ export interface config {
     server: {
         port?: Number,
         mode?: String,
+        secret?: String,
     },
     database: {
         uri?: String

@@ -1,8 +1,14 @@
-<h1>Login Page</h1>
-<form action="/login" method="POST">
-    <label for="username">UserName</label>
-    <input type="text" placeholder="username" id="xyz" name="username">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
-    <button>Login</button>
+
+<h1>Login</h1>
+ 
+<form action="/api/auth" method="POST">
+    <input type="email" name="email"placeholder="hello@vendorapp.page">
+    <input type="password" name="password"placeholder="password">
+    <button>login</button>
 </form>
+ 
+<h1>This is home page</h1>
+ 
+<li><a href="/register">Sign up!!</a></li>
+<li><a href="/login">Login</a></li>
+<li><a href="/logout">Logout</a></li>
