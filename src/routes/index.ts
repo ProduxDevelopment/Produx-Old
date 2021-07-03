@@ -1,5 +1,7 @@
+
 import { Router } from "express";
 import { config } from "../interfaces/config"
+import { flash } from "express-flash-message";
 
 import File from "../../Config/config.json"
 import express from "express";
@@ -12,23 +14,38 @@ const config = File as config
 const router = Router()
 
 router.use(express.json())
-router.use(express.urlencoded({extended: false}))
-router.use(session({secret: String(config.server.secret),resave: false,saveUninitialized: true,store: new MongoStore({mongoUrl: String(config.database.uri)})}))
+router.use(express.urlencoded({
+    extended: false
+}))
+router.use(session({
+    secret: String(config.server.secret),
+    resave: false,
+    saveUninitialized: true,
+    store: new MongoStore({
+        mongoUrl: String(config.database.uri)
+    })
+}))
 router.use(passport.initialize())
 router.use(passport.session())
+router.use(flash())
 
-import auth from "./auth/auth"
-router.use("/api/auth", auth)
-
-router.get("/register", (req, res) => {
-    res.render("register")
-})
+import login from "./login/index"
+router.use("/", login)
 
 router.get("/hello", (req, res) => {
-    if(req.isAuthenticated()){
-        res.send("pog")
+    if (req.isAuthenticated()) {
+        //@ts-ignore
+        const { email, password, name } = req.user
+        res.send("pog" + name)
     } else {
-        res.send("your gay")
+        res.redirect("/login")
     }
 })
-export default router;
+
+router.get("/logout", (req, res) => {
+    res.clearCookie("connect.sid")
+    res.redirect("/login")
+})
+
+
+export default router

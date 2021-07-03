@@ -16,15 +16,26 @@ passport.deserializeUser((id, done) => {
 })
 
 passport.use(
-    new strat({ usernameField: "email" }, (email, password, done) => {
+    new strat({ usernameField: "email", passReqToCallback: true }, (req:any, email:any, password:any, done:any) => {
         User.findOne({email: email})
             .then((user: any) => {
-                if(!user){
+                if(req.baseURL == "/login"){
+                    bcrypt.compare(password, user.password, (err:any, isMatch:any) => {
+                        if(err) throw err;
+
+                        if(isMatch) {
+                            return done(null, user)
+                        } else {
+                            return done(null, false, { message: "Wrong password!"})
+                        }
+                    })
+                } else if(!user){
                     const newUser = new User({email, password});
                     bcrypt.genSalt(10, (err:any, salt:any) => {
                         bcrypt.hash(newUser.password, salt, (err, hash) => {
                             if(err) throw err;
                             newUser.password = hash;
+                            newUser.name = req.body.name
                             newUser.save()
                             .then((user:any) => {
                                 return done(null, user)
@@ -35,15 +46,7 @@ passport.use(
                         })
                     })
                 } else {
-                    bcrypt.compare(password, user.password, (err:any, isMatch:any) => {
-                        if(err) throw err;
-
-                        if(isMatch) {
-                            return done(null, user)
-                        } else {
-                            return done(null, false, { message: "Wrong password!"})
-                        }
-                    })
+                    return done(null, false, { message: "Invalid Operation"})
                 }
             })
             .catch((err:any) => {

@@ -166,7 +166,7 @@
     "@types/express" "*"
     "@types/passport" "*"
 
-"@types/passport@*":
+"@types/passport@*", "@types/passport@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@types/passport/-/passport-1.0.6.tgz#72343e49d65efa98cb328163cff5f127981947d7"
   integrity sha512-9oKfrJXuAxvyxdrtMCxKkHgmd6DMO8NDOLvMJ1LvIWd6/xP+i81PAkpTaEca7VhJX9S009RciwZL/j6dsLsHrA==
@@ -550,6 +550,11 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+express-flash-message@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/express-flash-message/-/express-flash-message-2.1.0.tgz#c41de9508cb72772f5adcfa45ed79ef5e3fb0ad3"
+  integrity sha512-oR/cwzt7CfjSUt7XwEZCCyOegylHuTF8/by6+jAshZh2TzREqDIjfU0JU5M6usurSk/ep3lUxxyaCbujyERyTQ==
 
 express-session@^1.17.2:
   version "1.17.2"
