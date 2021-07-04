@@ -5,6 +5,7 @@ import express from "express";
 import consola from "consola";
 import cookieParser from "cookie-parser";
 import path from "path";
+import fs from "fs";
 
 class ExpressClient{
     /**
@@ -12,8 +13,7 @@ class ExpressClient{
      */
     public constructor(config: config){
         const app = express()
-        
-        app.set('views', path.join(__dirname, '../views'));
+        app.set('views', path.join(__dirname, `../themes/${config.customisation.theme}`));
         app.set('view engine', 'ejs');
         
         app.use('/', routes);

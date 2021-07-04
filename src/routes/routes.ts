@@ -41,7 +41,9 @@ router.get("/", (req, res) => {
         title: "Homepage",
         description: MetaFile.pageDescription,
         author: MetaFile.author,
-        keywords: MetaFile.keywords
+        keywords: MetaFile.keywords,
+        siteName: "Devnics Store",
+        siteColour: "orange"
     })
 })
 
