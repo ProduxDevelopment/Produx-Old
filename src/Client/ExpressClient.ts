@@ -13,6 +13,7 @@ class ExpressClient{
      */
     public constructor(config: config){
         const app = express()
+
         app.set('views', path.join(__dirname, `../themes/${config.customisation.theme}`));
         app.set('view engine', 'ejs');
         

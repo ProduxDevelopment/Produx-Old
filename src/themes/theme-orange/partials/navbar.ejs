@@ -1,37 +1,13 @@
-<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-orange-500 mb-3">
-    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
-      <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-        <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#pablo">
-          <%= siteName %> 
-        </a>
-        <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-orange-100 block lg:hidden outline-none focus:outline-none" type="button" onclick="toggleNavbar('example-collapse-navbar')">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <div class="lg:flex flex-grow items-center hidden" id="example-collapse-navbar">
-        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Home</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Product</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Login</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <script>
-    function toggleNavbar(collapseID){
-      document.getElementById(collapseID).classList.toggle("hidden");
-      document.getElementById(collapseID).classList.toggle("flex");
-    }
-  </script>
+<header class="text-gray-400 bg-gray-900 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+      <span class="ml-3 text-xl"><%= siteName %></span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-white" href="/">Home</a>
+      <a class="mr-5 hover:text-white" href="/shop">Your store</a>
+      <a class="mr-5 hover:text-white" href="/login">Login</a>
+      <a class="mr-5 hover:text-white" href="/support">Support</a>
+    </nav>
+  </div>
+</header>

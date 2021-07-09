@@ -16,7 +16,10 @@ export interface config {
         live?: boolean;
     },
 
-    customisation: {
+    customisation?: {
+        info?: {
+            siteName?: string
+        }
         theme?: string
     }
     

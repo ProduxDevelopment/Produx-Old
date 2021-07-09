@@ -1,0 +1,62 @@
+{
+    "themeMeta": {
+        "name": "Orange Default",
+        "version": "0.0.1",
+        "author": "Vendor Team"
+    },
+
+    "index": {
+        "_comments": "This is the main page without anything after the slash.",
+
+        "hero": {
+            "messageLine1": "Minecraft Builds",
+            "messageLine2": "reimagined.",
+            "description": "Welcome to Vendor. We are changing the way you think about ecommerce. One step at a time. This is the demo theme, however if you want to change me go into the admin panel!",
+            "button": {
+                "name": "Join our discord server!",
+                "href": "https://discord.com"
+            }
+        },
+
+        "reviews": {
+           "title": "Reviews",
+           "reviews": [
+               {
+                   "description": "Cool review here, I'm so good. Vouch for Vendor!",
+                   "name": "Akash Deb",
+                   "job": "An excited client!",
+                   "img": "https://dummyimage.com/106x106"
+               },
+               {
+                "description": "Cool review here, I'm so good. Vouch for Vendor!",
+                "name": "Akash Deb",
+                "job": "An excited client!",
+                "img": "https://dummyimage.com/106x106"
+            }
+           ]
+        },
+
+        "stats": {
+            "title": "Listen to us brag about our stats!",
+            "description": "We've got amazing stats, I promise. So thats a reason why you should trust us!",
+            "stats": [
+                {
+                    "statName": "Sales",
+                    "statInfo": "400+"
+                },
+                {
+                    "statName": "Reviews",
+                    "statInfo": "100+"
+                },
+                {
+                    "statName": "Products",
+                    "statInfo": "39"
+                },
+                {
+                    "statName": "Downloads",
+                    "statInfo": "1000"
+                }
+            ]
+        }
+
+    }}

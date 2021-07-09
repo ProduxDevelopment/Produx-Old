@@ -1,0 +1,10 @@
+{
+    "themeMeta": {
+        "name": "Orange Default",
+        "version": "0.0.1",
+        "author": "Vendor Team"
+    },
+    "index": {
+        "_comments": "This is the main page without anything after the slash."
+    }
+}

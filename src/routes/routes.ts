@@ -1,3 +1,4 @@
+import theme from "../../Config/theme.json"
 
 import { Router } from "express";
 import { config } from "../interfaces/config"
@@ -36,14 +37,17 @@ router.use(flash());
 import login from "./login/index"
 router.use("/", login)
 
+
+
 router.get("/", (req, res) => {
     res.render("index", {
         title: "Homepage",
-        description: MetaFile.pageDescription,
-        author: MetaFile.author,
-        keywords: MetaFile.keywords,
-        siteName: "Devnics Store",
-        siteColour: "orange"
+        description: meta.pageDescription,
+        author: meta.author,
+        keywords: meta.keywords,
+        siteName: config.customisation.info.siteName,
+        siteColour: "orange",
+        data: theme
     })
 })
 
@@ -58,6 +62,17 @@ router.get("/panel", (req, res) => {
     }
 })
 
-
+// DO NOT PUT ANYTHING BELOW THIS.
+router.get("*", (req, res) => {
+    res.render("404", {
+        title: "404",
+        description: meta.pageDescription,
+        author: meta.author,
+        keywords: meta.keywords,
+        siteName: config.customisation.info.siteName,
+        siteColour: "orange",
+        data: theme
+    })
+})
 
 export default router

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs', {title}, {description}, {author}, {keywords}, {siteName}) %> 
+<body>
+    <style>
+          .error-text {
+            font-size: 130px;
+          }
+      
+          @media (min-width: 768px) {
+            .error-text {
+              font-size: 220px;
+            }
+          }
+      
+      </style>
+      <div class="h-screen w-screen bg-gray-800 flex justify-center content-center flex-wrap">
+        <p class="font-sans text-white error-text">404</p>
+      </div>
+
+      <div class="absolute w-screen bottom-0 mb-6 text-white text-center font-sans text-xl">
+        <a href="/">
+            <span class="opacity-50">Return home.</span>
+        </a>
+    </div>
+</body>
