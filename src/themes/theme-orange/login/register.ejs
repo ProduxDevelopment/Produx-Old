@@ -1,6 +1,6 @@
-<%- include('./partials/head.ejs', {title}, {description}, {author}, {keywords}, {siteName}) %> 
+<%- include('../partials/head.ejs', {title}, {description}, {author}, {keywords}, {siteName}) %> 
 <body class="bg-gray-900">
-    <%- include('./partials/navbar.ejs'), {siteName}, {siteColour} %>
+    <%- include('../partials/navbar.ejs'), {siteName}%>
 
 <section class="text-gray-400 bg-gray-900 body-font relative">
     <div class="container px-5 py-24 mx-auto">
@@ -31,7 +31,7 @@
             </div>
             </div>
             <div class="p-10 w-full">
-                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Login</button>
+                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Register</button>
             </div>
         </form>
         <small>Already have an account? Login <a class="hover:text-white" href="/login">here</a></small>
@@ -40,5 +40,6 @@
     </div>
   </section>
 
-    <%- include('./partials/footer.ejs'), {siteName}, {siteColour} %>
+    <%- include('../partials/footer.ejs'), {siteName}%>
 </body>
+

@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const UserSchema = new mongoose.Schema(
     {
         name: {
-            type: String
+            type: String,
+            required: true
         },
         email: {
             type: String,
@@ -20,6 +21,9 @@ const UserSchema = new mongoose.Schema(
         date: {
             type: Date,
             default: Date.now()
+        },
+        product: {
+            type: [Array],
         }
     },
     {strict: false}

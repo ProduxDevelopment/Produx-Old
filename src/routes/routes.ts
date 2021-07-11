@@ -37,7 +37,11 @@ router.use(flash());
 import login from "./login/index"
 router.use("/", login)
 
+import userPanel from "./userPanel/index"
+router.use("/panel", userPanel)
 
+import store from "./store/index"
+router.use("/store", store)
 
 router.get("/", (req, res) => {
     res.render("index", {
@@ -49,17 +53,6 @@ router.get("/", (req, res) => {
         siteColour: "orange",
         data: theme
     })
-})
-
-router.get("/panel", (req, res) => {
-    if (req.isAuthenticated()) {
-        //@ts-ignore
-        const { email, password, name } = req.user
-        res.send("Panel")
-    } else {
-        //req.flash("error", "You are not authenticated!")
-        res.redirect("/login")
-    }
 })
 
 // DO NOT PUT ANYTHING BELOW THIS.

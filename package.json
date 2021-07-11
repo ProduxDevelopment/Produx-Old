@@ -6,13 +6,9 @@
   "author": "Akash",
   "license": "READ-IN-LICENSE.MD",
   "scripts": {
-    "build": "tsc",
     "installDeps": "yarn",
-    "startUp": "node build/src/index.js",
-    "copyEjs": "cp src/themes build/src -r",
-    "copyEjsMac": "cp -r src/themes build/src",
-    "start": "npm run installDeps && npm run build && npm run startUp",
-    "startMac": "npm run installDeps && npm run build && npm run copyEjsMac && npm run startUp",
+    "init": "ts-node -T ./src/index",
+    "start": "npm run installDeps && npm run init",
     "dev": "nodemon"
   },
   "dependencies": {

@@ -25,6 +25,7 @@ passport.use(
                         bcrypt.hash(newUser.password, salt, (err, hash) => {
                             if(err) throw err;
                             newUser.password = hash;
+                            if(!req.body.name) return done(null, false, { message: "Weird error!"})
                             newUser.name = req.body.name
                             newUser.save()
                             .then((user:any) => {
@@ -35,7 +36,7 @@ passport.use(
                             })
                         })
                     })
-                }   else if(User){
+                }  else {
                     bcrypt.compare(password, user.password, (err:any, isMatch:any) => {
                         if(err) throw err;
 
