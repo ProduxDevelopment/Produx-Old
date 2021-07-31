@@ -3,9 +3,7 @@ import routes from "../routes/routes"
 
 import express from "express";
 import consola from "consola";
-import cookieParser from "cookie-parser";
 import path from "path";
-import fs from "fs";
 
 class ExpressClient{
     /**

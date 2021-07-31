@@ -13,7 +13,8 @@ router.get("/", (req, res) => {
             author: meta.author,
             keywords: meta.keywords,
             siteName: config.customisation.info.siteName,
-            data: theme
+            data: theme,
+            authenticated: req.isAuthenticated()
         })
     } else { 
         req.flash("error", "You are not authenticated!")

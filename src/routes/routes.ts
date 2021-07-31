@@ -51,7 +51,8 @@ router.get("/", (req, res) => {
         keywords: meta.keywords,
         siteName: config.customisation.info.siteName,
         siteColour: "orange",
-        data: theme
+        data: theme,
+        authenticated: req.isAuthenticated()
     })
 })
 
@@ -64,7 +65,8 @@ router.get("*", (req, res) => {
         keywords: meta.keywords,
         siteName: config.customisation.info.siteName,
         siteColour: "orange",
-        data: theme
+        data: theme,
+        authenticated: req.isAuthenticated()
     })
 })
 

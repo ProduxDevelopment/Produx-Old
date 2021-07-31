@@ -24,6 +24,10 @@ const UserSchema = new mongoose.Schema(
         },
         product: {
             type: [Array],
+        },
+        admin: {
+            type: Boolean,
+            default: false
         }
     },
     {strict: false}

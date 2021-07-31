@@ -13,7 +13,9 @@ router.get("/", async (req, res) => {
         author: meta.author,
         keywords: meta.keywords,
         siteName: config.customisation.info.siteName,
-        data: theme
+        data: theme,
+        authenticated: req.isAuthenticated()
+
     })
 })
 
