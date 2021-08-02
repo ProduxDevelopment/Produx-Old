@@ -9,6 +9,9 @@ class ExpressClient{
     /**
      * Tells express.js to start listening on defined port(s).
      */
+
+    public server:any = null
+
     public constructor(config: config){
         const app = express()
 
@@ -18,7 +21,11 @@ class ExpressClient{
         app.use('/', routes);
 
 
-        app.listen(config.server.port, (() => consola.success("App listening on port", config.server.port, "in", config.server.mode, "mode.")))
+        this.server = app.listen(config.server.port, (() => consola.success("App listening on port", config.server.port, "in", config.server.mode, "mode.")))
+    }
+
+    public destory(){
+        this.server.close()
     }
 
 }
