@@ -1,9 +1,9 @@
 import { Router } from "express";
 const router = Router()
 
-import config from "../../../../Config/config.json"
-import meta from "../../../../Config/meta.json"
-import theme from "../../../../Config/theme.json"
+import config from "../../../Config/config.json"
+import meta from "../../../Config/meta.json"
+import theme from "../../../Config/theme.json"
 
 router.get("/", (req, res) => {
     if(req.isAuthenticated()) return res.redirect("/panel")

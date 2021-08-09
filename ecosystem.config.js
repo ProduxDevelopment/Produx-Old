@@ -3,4 +3,4 @@ module.exports = {
       name   : "Vendor",
       script : "yarn start"
     }]
-  }
+}

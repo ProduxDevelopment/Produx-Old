@@ -14,3 +14,4 @@ const cli = new CLI()
 
 export { database, express, paypal, cli}
 
+process.env.NODE_ENV = 'production';

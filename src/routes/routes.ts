@@ -34,14 +34,14 @@ router.use(passport.initialize())
 router.use(passport.session())
 router.use(flash());
 
-import login from "./login/index"
+import login from "./login/routes"
 router.use("/", login)
 
-import userPanel from "./userPanel/index"
+import userPanel from "./userPanel/routes"
 router.use("/panel", userPanel)
 
-import store from "./store/index"
-router.use("/store", store)
+import store from "./store/routes"
+router.use("/store", store,)
 
 router.get("/", (req, res) => {
     res.render("index", {

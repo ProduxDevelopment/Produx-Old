@@ -30,7 +30,7 @@ class PayPalClient {
                 this.token = json.access_token
                 this.init = true
 
-                consola.success("PayPal client has been initlized.")
+                consola.success("PayPal client has been initlized.\n")
                 return;
             });
     }
